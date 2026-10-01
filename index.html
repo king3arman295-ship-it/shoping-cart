@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bazaar – Online Shop</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <a class="logo" href="#">Bazaar</a>
+  <input id="search" type="search" placeholder="Search products" aria-label="Search products">
+  <button id="cartBtn" class="cart-btn">Cart <span id="count">0</span></button>
+</header>
+
+<section class="hero">
+  <h1>Everyday things, delivered to your door.</h1>
+  <p>Free delivery on orders above Rs 5,000. Pay on delivery.</p>
+</section>
+
+<main>
+  <div class="tools">
+    <div id="cats" class="cats"></div>
+    <select id="sort" aria-label="Sort products">
+      <option value="">Sort: Featured</option>
+      <option value="low">Price: low to high</option>
+      <option value="high">Price: high to low</option>
+    </select>
+  </div>
+  <div id="grid" class="grid"></div>
+  <p id="empty" class="empty" hidden>No products match. Try another search or category.</p>
+</main>
+
+<div id="overlay" class="overlay" hidden></div>
+<aside id="drawer" class="drawer" aria-label="Shopping cart">
+  <div class="drawer-head"><h2>Your cart</h2><button id="close" aria-label="Close cart">✕</button></div>
+  <div id="items" class="items"></div>
+  <div class="drawer-foot">
+    <div class="total"><span>Total</span><strong id="total">Rs 0</strong></div>
+    <button id="checkout" class="primary">Checkout</button>
+  </div>
+</aside>
+
+<dialog id="dlg">
+  <form method="dialog" id="form">
+    <h2>Delivery details</h2>
+    <label>Full name <input name="name" required></label>
+    <label>Phone <input name="phone" type="tel" required></label>
+    <label>Address <textarea name="addr" rows="3" required></textarea></label>
+    <p class="note">Payment: cash on delivery.</p>
+    <div class="row"><button value="cancel" class="ghost" formnovalidate>Cancel</button><button class="primary" id="place" value="ok">Place order</button></div>
+  </form>
+</dialog>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
